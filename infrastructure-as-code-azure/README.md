@@ -1,37 +1,24 @@
-# 🏗️ Module: Secure Infrastructure as Code (Terraform)
-**Project:** High-Availability Healthcare Infrastructure 
-**Location:** `denmarkeast` (EU Data Sovereignty)
+# 🏗️ Module 1: Secure Infrastructure as Code (Terraform)
+**Project:** Healthcare Enterprise Architecture 
+**Compliance Standards:** ISO 27001:2022 | GDPR | NIS2 | OWASP Top 10
 
-This module implements a **Zero Trust** network architecture and Layer 7 application security for a critical hospital environment. It focuses on micro-segmentation and automated compliance.
+This module defines the core secure network perimeter for a hospital environment, enforcing **Zero Trust** principles at every layer.
 
----
-
-### ⚖️ Regulatory & Compliance Mapping
-The following table maps the technical resources defined in `main.tf` to international security standards.
+### 📋 Technical Compliance Mapping
 
 
-| Technical Resource | Standard / Control | Security Objective |
+| Resource | Control | Objective |
 | :--- | :--- | :--- |
-| **VNET & Subnets** (#2, 3, 4, 11) | **ISO 27001:2022 A.8.20** | **Network Segmentation:** Isolated tiers for WAF, Management (Bastion), and Medical Workloads. |
-| **Azure Bastion** (#6) | **GDPR Art. 32 / NIS2** | **Secure Management:** "Zero Public IP" administration via TLS. Eliminates RDP/SSH exposure. |
-| **NSG Shield** (#7, 8) | **ISO 27001:2022 A.8.22** | **Micro-segmentation:** "Deny by Default" ingress policy to mitigate lateral movement. |
-| **WAF Policy** (#10) | **OWASP Top 10** | **Active Defense:** `Prevention` mode enabled to block SQL Injection and Cross-Site Scripting (XSS). |
-| **Application Gateway** (#12)| **NIS2 / ISO A.8.14** | **Layer 7 Inspection:** Centralized reverse proxy for deep packet inspection and traffic governance. |
-| **Resilient Public IP** (#9) | **ISO 27001:2022 A.8.14** | **High Availability:** 3-Zone redundancy to ensure healthcare service continuity. |
-
----
-
-### 🚀 Technical Assets & Patterns
-- **Idempotency:** Fully managed via Terraform (v1.15.x).
-- **Security-First Design:** Managed Rulesets (OWASP 3.2) applied at the edge.
-- **Auditability:** Resource tagging for Environment (Production) and Management (Terraform) tracking.
+| **VNET & Subnets** | **ISO A.8.20** | Network segmentation separating WAF, Management, and Workload tiers. |
+| **Azure Bastion** | **GDPR Art. 32** | Zero-exposure administration. No Public IPs on internal nodes. |
+| **NSG Shield** | **ISO A.8.22** | "Deny by Default" ingress logic to mitigate lateral movement. |
+| **WAF Policy** | **OWASP / NIS2** | Active **Prevention** mode against SQLi and XSS attacks. |
+| **App Gateway** | **ISO A.8.14** | Layer 7 Traffic Governance and centralized security inspection. |
+| **Resilient IP** | **NIS2 / Availability** | **High Availability:** 3-Zone redundancy for critical service continuity. |
 
 ### 🛠️ Validation Workflow
-To verify the integrity and security posture of this module, execute:
 ```bash
 terraform init
 terraform validate
 terraform plan
 ```
----
-**Note:** This module is part of the *Azure Enterprise Security Architecture Framework*.
