@@ -182,3 +182,34 @@ resource "azurerm_application_gateway" "hospital_appgw" {
 
   firewall_policy_id = azurerm_web_application_firewall_policy.hospital_waf_policy.id
 }
+
+# 13. Resource Lock: Business Continuity (Resilience)
+# Prevents accidental deletion of the core infrastructure.
+resource "azurerm_management_lock" "hospital_lock" {
+  name       = "CanNotDelete-Core-Infrastructure"
+  scope      = azurerm_resource_group.hospital_rg.id
+  lock_level = "CanNotDelete"
+  notes      = "Critical Healthcare Infrastructure: Protected against accidental deletion for NIS2 compliance."
+}
+
+# 14. Azure Key Vault: The Hospital's Safe (Secrets Management)
+# ISO 27001 A.8.24 Compliance
+resource "azurerm_key_vault" "hospital_vault" {
+  name                        = "KV-Hospital-Secure-IaC" # Nombre único
+  location                    = azurerm_resource_group.hospital_rg.location
+  resource_group_name         = azurerm_resource_group.hospital_rg.name
+  enabled_for_disk_encryption = true
+  tenant_id                   = "5b493d47-78eb-4af6-ae46-ac682353ee07" # Tu ID de inquilino
+  soft_delete_retention_days  = 7
+  purge_protection_enabled    = false
+
+  sku_name = "standard"
+
+  access_policy {
+    tenant_id = "5b493d47-78eb-4af6-ae46-ac682353ee07"
+    object_id = "vicky-object-id" # Lo cambiaremos mañana en el repaso de variables
+
+    key_permissions = ["Get", "List", "Create"]
+    secret_permissions = ["Get", "List", "Set"]
+  }
+}
