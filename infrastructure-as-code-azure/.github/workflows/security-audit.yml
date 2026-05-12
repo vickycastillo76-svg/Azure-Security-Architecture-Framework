@@ -1,0 +1,27 @@
+name: "Compliance & Security Audit"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  terraform-audit:
+    name: "Terraform Security Scan"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: HashiCorp Setup
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./infrastructure-as-code-azure
+
+      - name: Security & Syntax Check
+        run: terraform validate
+        working-directory: ./infrastructure-as-code-azure
