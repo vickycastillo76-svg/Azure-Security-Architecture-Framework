@@ -34,3 +34,21 @@ resource "azurerm_subscription_policy_assignment" "tagging_policy" {
 PARAMS
 }
 
+# 3. Cost Control & Governance: Allowed Virtual Machine SKUs
+# Prevents the creation of expensive resources that are not required for this workload.
+resource "azurerm_subscription_policy_assignment" "allowed_vms" {
+  name                 = "Enforce-Allowed-VMs"
+  subscription_id      = "/subscriptions/5b493d47-78eb-4af6-ae46-ac682353ee07"
+  policy_definition_id = "/providers/Microsoft.Authorization/policyDefinitions/cccc23c7-8427-4f53-ad12-b6a63eb45097"
+  display_name         = "Governance: Restricted VM Sizes"
+  description          = "Cost management guardrail: Only allows small, cost-effective VM sizes (B-Series)."
+
+  parameters = <<PARAMS
+    {
+      "listOfAllowedSKUs": {
+        "value": ["Standard_B1s", "Standard_B2s"]
+      }
+    }
+PARAMS
+}
+
