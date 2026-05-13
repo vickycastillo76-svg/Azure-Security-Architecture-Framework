@@ -13,15 +13,15 @@ jobs:
     
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/with/checkout@v3
 
-      - name: Install Terraform Nativo
+      - name: Setup Terraform (Pinned Stable Version)
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: "1.5.7" # Forzamos una versión ultra-estable
-          terraform_wrapper: false   # Desactivamos el wrapper conflictivo
+          terraform_version: "1.14.9" # Versión blindada libre de bugs de conexión
+          terraform_wrapper: false
 
-      - name: Terraform Init (Static Mode)
+      - name: Terraform Init (Isolated Mode)
         run: terraform init -backend=false -input=false
         working-directory: ./infrastructure-as-code-azure
 
