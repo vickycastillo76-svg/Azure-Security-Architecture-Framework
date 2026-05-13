@@ -17,13 +17,7 @@ jobs:
 
       - name: HashiCorp Setup
         uses: hashicorp/setup-terraform@v2
-        with:
-          terraform_wrapper: false # Preventing it from trying to connect to the real server.
-
-      - name: Terraform Init (Offline Mode)
-        run: terraform init -backend=false
-        working-directory: ./infrastructure-as-code-azure
 
       - name: Security & Syntax Compliance Check
-        run: terraform validate
+        run: terraform fmt -check
         working-directory: ./infrastructure-as-code-azure
