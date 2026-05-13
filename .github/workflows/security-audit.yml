@@ -13,12 +13,11 @@ jobs:
     
     steps:
       - name: Checkout Code
-        uses: actions/with/checkout@v3
+        uses: actions/checkout@v3
 
-      - name: Setup Terraform (Pinned Stable Version)
+      - name: Setup Terraform Nativo
         uses: hashicorp/setup-terraform@v2
         with:
-          terraform_version: "1.14.9" # Versión blindada libre de bugs de conexión
           terraform_wrapper: false
 
       - name: Terraform Init (Isolated Mode)
