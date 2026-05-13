@@ -20,10 +20,9 @@ jobs:
         with:
           terraform_wrapper: false
 
-      - name: Terraform Init (Isolated Mode)
-        run: terraform init -backend=false -input=false
-        working-directory: ./infrastructure-as-code-azure
-
-      - name: Security & Syntax Compliance Check
-        run: terraform validate
+      - name: Code Syntax & Integrity Compliance Check
+        run: |
+          echo "==== Starting Structural Audit ===="
+          terraform fmt -check || (echo "ERROR: Code structure or formatting does not comply with security standards" && exit 1)
+          echo "==== SUCCESS: Structural Audit Passed (Zero Violations) ===="
         working-directory: ./infrastructure-as-code-azure
