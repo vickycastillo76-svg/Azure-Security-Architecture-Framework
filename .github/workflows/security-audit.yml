@@ -17,7 +17,9 @@ jobs:
 
       - name: HashiCorp Setup
         uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_wrapper: false
 
-      - name: Security & Syntax Compliance Check
+      - name: Check Code Canonical Format
         run: terraform fmt -check
         working-directory: ./infrastructure-as-code-azure
