@@ -78,9 +78,7 @@ Subred           NSG_Asociado
 Subnet-FrontEnd  .../providers/Microsoft.Network/networkSecurityGroups/NSG-Vicky
 ```
 
-<p align="justify">📸 <i><b>Network Hardening Audit Verification:</b> Architectural evidence confirming successful NSG perimeter isolation and explicit whitelisting configurations.</i></p>
-
-![Network Hardening Audit Verification](../EVIDENCE%20/Evidence_Lab2_Network_Security_Rules.png)
+![Network Hardening Audit Verification](../evidence/Evidence_Lab2_Network_Security_Rules.png)
 
 ---
 
@@ -125,10 +123,7 @@ Log-Security-Central   westeurope   Succeeded            382e31f7-1981-40f5-b071
 PrincipalID: 088b02b1-dce4-43a0-842d-60ff0d90c893
 ```
 
-<p align="justify">📸 <i><b>Lab3 Compute Logging Validation:</b> Forensic proof of centralized logging and hardening metrics, ensuring immutable record persistence within the secure vault.</i></p>
-
-![Lab 3 Compute Logging Validation](../EVIDENCE%20/Evidence_Lab3_Compute_Logging_Validation.png)
-
+![Lab 3 Compute Logging Validation](../evidence/Evidence_Lab3_Compute_Logging_Validation.png)
 ---
 
 **🛠️ Automation & Hardening Tools**
@@ -161,10 +156,7 @@ AzureActivity
 | order by TimeGenerated desc
 ```
 
-<p align="justify">📸 <i><b>Platform Audit Evidence:</b> Real-time ingestion of Azure Activity Logs routed to the Amsterdam central repository, proving operational traceability under ISO 27001 requirements.</i></p>
-<p align="center">
-  <img src="../EVIDENCE%20/Evidence_Lab4_Platform_Auditing_ActivityLog.png" alt="Platform Audit Evidence" width="90%"/>
-</p>
+<![Platform Audit Evidence](../evidence/Evidence_Lab4_Platform_Auditing_ActivityLog.png)
 
 ---
 
@@ -187,10 +179,8 @@ AzureActivity
 
 <p align="justify">🔒 <b>Security & Privacy Note (Data Redaction):</b> In the forensic evidence below, the 'Caller' column (User Identity) has been intentionally excluded. This follows GDPR Data Minimization principles and best practices for public repositories, ensuring that sensitive PII (Personally Identifiable Information) is not exposed while maintaining the technical integrity of the audit trail.</p>
 
-<p align="justify">📸 <i><b>SOC Validation Evidence:</b> SIEM Forensic verification of administrative activity telemetry. The audit trail records critical security events while enforcing strict GDPR masking policies.</i></p>
-<p align="center">
-  <img src="../EVIDENCE%20/Evidence_Lab4_SOC_Validation.png" alt="SOC Validation Evidence" width="90%"/>
-</p>
+![SOC Validation Evidence](../evidence/Evidence_Lab4_SOC_Validation.png)
+
 
 > **Final Conclusion:** This laboratory demonstrates a complete Secure-by-Design architecture. From isolated networking and identity-based access to a fully functional SOC with real-time alerting and forensic logging.
 
@@ -236,9 +226,8 @@ AzureActivity
 - <p align="justify"><b>Inventory Audit:</b> Conducted a full Shadow IT cleanup, decommissioning redundant VNets in non-EU regions to ensure compliance with Sovereignty and FinOps best practices.</p>
 
 <p align="justify">📸 <i><b>Network Hardening Audit:</b> Complete infrastructure audit validation after shadow-IT decommissioning, proving a secure perimeter isolation with Azure Bastion.</i></p>
-<p align="center">
-  <img src="../EVIDENCE%20/Evidence_Lab4_Network_Hardening_Audit.png" alt="Network Hardening Audit" width="90%"/>
-</p>
+
+![Network Hardening Audit](../evidence/Evidence_Lab4_Network_Hardening_Audit.png)
 
 **🛠️ Automation Tools**
 <p align="justify">The complete automation script for these governance and hardening tasks is available here: [SOC_and_Network_Hardening.sh](./SOC_and_Network_Hardening.sh)</p>
@@ -253,9 +242,8 @@ AzureActivity
 - <p align="justify"><b>Connectivity Validation (Heartbeat):</b> Verified the real-time Heartbeat signal in the SIEM. This proves the end-to-end telemetry pipeline is operational, from the private network to the centralized log vault in Amsterdam.</p>
 
 <p align="justify">📸 <i><b>VM Heartbeat Evidence:</b> Active heartbeat validation signals inside the SIEM vault, demonstrating immediate continuous monitoring coverage for internal assets.</i></p>
-<p align="center">
-  <img src="../EVIDENCE%20/Evidence_Lab4_VM_Heartbeat.png" alt="VM Heartbeat Evidence" width="90%"/>
-</p>
+
+![VM Heartbeat Evidence](../evidence/Evidence_Lab4_VM_Heartbeat.png)
 
 **🛠️ Automation & Monitoring Tools**
 <p align="justify">The specific automation script for secure workload provisioning and SIEM integration is available here: [Workload_Security_and_Monitoring.sh](./Workload_Security_and_Monitoring.sh)</p>
