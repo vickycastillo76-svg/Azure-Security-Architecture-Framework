@@ -122,9 +122,9 @@ The VM has been granted a **unique security identity** to eliminate the need for
 The specific automation script for secure compute provisioning and SIEM telemetry baseline is available here: [Compute_Logging_Hardening.sh](./Compute_Logging_Hardening.sh)
 
 
-______________________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________________________________
 
-### 🛡️ Module 4: Platform Auditing & Incident Management
+### 🛡️ Module 4 (Part 1): Platform Auditing & Incident Management
 
 #### 📋 Change Control Record (Change Request CR-2026-004)
 - **Event:** Regional quota restriction for compute assets (SKU Not Available).
@@ -149,8 +149,11 @@ AzureActivity
 ```
 
 ---
-### 📸 Evidence Gallery - Lab 4
-![Platform Audit Evidence](./EVIDENCE%20/Evidence_Lab4_Platform_Auditing_ActivityLog.png)
+<p align="center">
+  <img src="../Platform_Audit_Evidence.png" alt="Platform Audit Evidence" width="90%"/>
+</p>
+<p align="justify">📸 <i><b>Platform Audit Evidence:</b> Real-time ingestion of Azure Activity Logs routed to the Amsterdam central repository, proving operational traceability under ISO 27001 requirements.</i></p>
+
 
 ### 🛡️ Module 4 (Part 2): SOC Validation & Incident Response
 
@@ -172,8 +175,11 @@ I simulated an unauthorized resource modification to test detection capabilities
 
 > **🔒 Security & Privacy Note (Data Redaction):** In the forensic evidence below, the 'Caller' column (User Identity) has been intentionally excluded. This follows **GDPR Data Minimization** principles and best practices for public repositories, ensuring that sensitive PII (Personally Identifiable Information) is not exposed while maintaining the technical integrity of the audit trail.
 
-#### 📸 Technical Evidence - Lab 4 (part 2)
-![SOC Validation Evidence](./EVIDENCE%20/Evidence_Lab4_SOC_Validation.png)
+<p align="center">
+  <img src="../SOC_Validation_Evidence.png" alt="SOC Validation Evidence" width="90%"/>
+</p>
+<p align="justify">📸 <i><b>SOC Validation Evidence:</b> SIEM Forensic verification of administrative activity telemetry. The audit trail records critical security events while enforcing strict GDPR masking policies.</i></p>
+
 
 > **Final Conclusion:** This laboratory demonstrates a complete **Secure-by-Design** architecture. From isolated networking and identity-based access to a fully functional SOC with real-time alerting and forensic logging.
 
@@ -202,7 +208,6 @@ To provide executive-level visibility and satisfy **Continuous Monitoring** requ
 ```kusto
 AzureActivity 
 
-
 | summarize count() by ActivityStatusValue 
 | render piechart
 ```
@@ -221,8 +226,10 @@ To eliminate the attack surface and implement **Network Segregation**, I impleme
 - **Secure Access:** Management is now performed via SSL (Port 443), removing the need for Public IPs on internal assets and mitigating brute-force risks.
 - **Inventory Audit:** Conducted a full **Shadow IT cleanup**, decommissioning redundant VNets in non-EU regions to ensure compliance with **Sovereignty** and **FinOps** best practices.
 
-### 📸 Evidence: Bastion Deployment & Final Network Architecture Audit**
-![Network Hardening Audit](./EVIDENCE%20/Evidence_Lab4_Network_Hardening_Audit.png)
+<p align="center">
+  <img src="../Network_Hardening_Audit.png" alt="Network Hardening Audit" width="90%"/>
+</p>
+<p align="justify">📸 <i><b>Network Hardening Audit:</b> Complete infrastructure audit validation after shadow-IT decommissioning, proving a secure perimeter isolation with Azure Bastion.</i></p>
 
 #### 🛠️ Automation Tools
 The complete automation script for these governance and hardening tasks is available here: [SOC_and_Network_Hardening.sh](./SOC_and_Network_Hardening.sh)
@@ -235,8 +242,10 @@ To close the security loop, I deployed a private Linux node and automated its te
 2. **Automated Auditing (NIS2 & ISO 27001 A.12.4.1):** Injected the **Log Analytics Agent** via Azure VM Extensions. This automation ensures that every new compute resource is under surveillance from its first second of life.
 3. **Connectivity Validation (Heartbeat):** Verified the real-time **Heartbeat** signal in the SIEM. This proves the end-to-end telemetry pipeline is operational, from the private network to the centralized log vault in Amsterdam.
 
-### 📸 Evidence: Real-time VM Heartbeat in Log Analytics**
-![VM Heartbeat Evidence](./EVIDENCE%20/Evidence_Lab4_VM_Heartbeat.png)
+<p align="center">
+  <img src="../VM_Heartbeat_Evidence.png" alt="VM Heartbeat Evidence" width="90%"/>
+</p>
+<p align="justify">📸 <i><b>VM Heartbeat Evidence:</b> Active heartbeat validation signals inside the SIEM vault, demonstrating immediate continuous monitoring coverage for internal assets.</i></p>
 
 #### 🛠️ Automation & Monitoring Tools
 The specific automation script for secure workload provisioning and SIEM integration is available here: [Workload_Security_and_Monitoring.sh](./Workload_Security_and_Monitoring.sh)
