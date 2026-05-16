@@ -32,7 +32,8 @@ This project demonstrates the automation of identity lifecycle management in Azu
 - **Security Best Practices:** Obfuscation of sensitive tenant information and credential management.
 
   #### 🛠️ Automation & Identity Tools
-The specific automation script for RBAC, Managed Identities, and User Provisioning is available here: [Identity_Management_Lab.sh](./scripts-bash/Identity_Management_Lab.sh)
+The specific automation script for RBAC, Managed Identities, and User Provisioning is available here: [Identity_Management_Lab.sh](./Identity_Management_Lab.sh)
+
 
   -------------------------------------------------------------------------------------------------------------------------------
 
@@ -72,7 +73,8 @@ Subnet-FrontEnd  .../providers/Microsoft.Network/networkSecurityGroups/NSG-Vicky
 ```
 
 #### 🛠️ Automation & Network Tools
-The specific automation script for VNet architecture, Subnetting, and NSG rules is available here: [Network_Security_Hardening.sh](./scripts-bash/Network_Security_Hardening.sh)
+The specific automation script for VNet architecture, Subnetting, and NSG rules is available here: [Network_Security_Hardening.sh](./Network_Security_Hardening.sh)
+
 
 __________________________________________________________________________________________________________________________________________
 
@@ -117,7 +119,8 @@ The VM has been granted a **unique security identity** to eliminate the need for
 <img width="1713" height="237" alt="Lab3_Compute_Logging_Validation" src="https://github.com/user-attachments/assets/37e1d576-d4e3-4fd2-ba10-d63918f02a5d" />
 
 #### 🛠️ Automation & Hardening Tools
-The specific automation script for secure compute provisioning and SIEM telemetry baseline is available here: [Compute_Logging_Hardening.sh](./scripts-bash/Compute_Logging_Hardening.sh)
+The specific automation script for secure compute provisioning and SIEM telemetry baseline is available here: [Compute_Logging_Hardening.sh](./Compute_Logging_Hardening.sh)
+
 
 ______________________________________________________________________________________________________________________________________________________________
 
@@ -236,5 +239,6 @@ To close the security loop, I deployed a private Linux node and automated its te
 ![VM Heartbeat Evidence](./EVIDENCE%20/Evidence_Lab4_VM_Heartbeat.png)
 
 #### 🛠️ Automation & Monitoring Tools
-The specific automation script for secure workload provisioning and SIEM integration is available here: [Workload_Security_and_Monitoring.sh](./scripts-bash/Workload_Security_and_Monitoring.sh)
+The specific automation script for secure workload provisioning and SIEM integration is available here: [Workload_Security_and_Monitoring.sh](./Workload_Security_and_Monitoring.sh)
+
 
