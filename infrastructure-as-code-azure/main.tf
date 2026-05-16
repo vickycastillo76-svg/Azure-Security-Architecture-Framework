@@ -1,3 +1,4 @@
+data "azurerm_client_config" "current" {}
 # 1. Resource Group
 resource "azurerm_resource_group" "hospital_rg" {
   name     = var.resource_group_name
@@ -207,7 +208,7 @@ resource "azurerm_key_vault" "hospital_vault" {
 
   access_policy {
     tenant_id = "5b493d47-78eb-4af6-ae46-ac682353ee07"
-    object_id = "vicky-object-id" # Lo cambiaremos mañana en el repaso de variables
+        object_id = data.azurerm_client_config.current.object_id
 
     key_permissions = ["Get", "List", "Create"]
     secret_permissions = ["Get", "List", "Set"]
