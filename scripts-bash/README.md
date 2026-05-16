@@ -79,7 +79,7 @@ Subnet-FrontEnd  .../providers/Microsoft.Network/networkSecurityGroups/NSG-Vicky
 
 <p align="justify">📸 <i><b>Network Hardening Audit Verification:</b> Architectural evidence confirming successful NSG perimeter isolation and explicit whitelisting configurations.</i></p>
 <p align="center">
-  <img src="../EVIDENCE%20/Evidence_Lab2_Network_Security_Hardening_Matrix.png" alt="Network Hardening Audit Verification" width="90%"/>
+  <img src="../EVIDENCE%20/Evidence_Lab2_Network_Security_Rules.png" alt="Network Hardening Audit Verification" width="90%"/>
 </p>
 
 **🛠️ Automation & Network Tools**
