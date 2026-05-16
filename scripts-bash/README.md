@@ -1,19 +1,23 @@
 # 🛡️ Azure Enterprise Security Architecture Framework
-**Author:** Victoria Castillo (Vicky Castillo) - Security Auditor & Cloud Security Engineer
+<p align="justify">Author: Victoria Castillo (Vicky Castillo) - Security Auditor & Cloud Security Engineer</p>
 
-<p align="justify"><i>Welcome to my **Cloud Security Engineering Portfolio**. This repository showcases a comprehensive, end-to-end framework for deploying and governing **highly secure enterprise environments** on Microsoft Azure.</i></p>
+<p align="justify">Welcome to my <b>Cloud Security Engineering Portfolio</b>. This repository showcases a comprehensive, end-to-end framework for deploying and governing <b>highly secure enterprise environments</b> on Microsoft Azure.</p>
 
 ### 🚀 Technical Evolution: From Scripting to Infrastructure as Code (IaC)
-<p align="justify"><i>This project documents a professional roadmap from manual automation to architectural governance:
-- **Foundational Phase (Bash Scripting):** Initial implementation of **Identity & Access Management (IAM)**, **Network Security Groups (NSG)**, and **SOC Operations**. These legacy assets are organized within the `/scripts-bash` directory.
-- **Architectural Phase (Terraform):** The current enterprise standard. I have migrated the core infrastructure to **Terraform (HCL)** to enforce **Zero Trust principles**, **Idempotency**, and **Full Auditability**.</i></p>
+
+<p align="justify">This project documents a professional roadmap from manual automation to architectural governance:</p>
+
+- <p align="justify"><b>Foundational Phase (Bash Scripting):</b> Initial implementation of <b>Identity & Access Management (IAM)</b>, <b>Network Security Groups (NSG)</b>, and <b>SOC Operations</b>. These legacy assets are organized within the `/scripts-bash` directory.</p>
+- <p align="justify"><b>Architectural Phase (Terraform):</b> The current enterprise standard. I have migrated the core infrastructure to <b>Terraform (HCL)</b> to enforce <b>Zero Trust principles</b>, <b>Idempotency</b>, and <b>Full Auditability</b>.</p>
 
 ### ⚖️ Compliance & Regulatory Mapping
-<p align="justify"><i>The framework is engineered to meet the stringent requirements of international cybersecurity standards for critical infrastructure:
-- **ISO 27001:2022:** Information Security Management and Operational Logging.
-- **NIS2 Directive:** Resilience of high-criticality digital systems.
-- **GDPR:** Privacy by Design and **EU Data Sovereignty** (Denmark/Western Europe regions).
-- **NIST Cybersecurity Framework:** Detection, Protection, and Response capabilities.</i></p>
+
+<p align="justify">The framework is engineered to meet the stringent requirements of international cybersecurity standards for critical infrastructure:</p>
+
+- <p align="justify"><b>ISO 27001:2022:</b> Information Security Management and Operational Logging.</p>
+- <p align="justify"><b>NIS2 Directive:</b> Resilience of high-criticality digital systems.</p>
+- <p align="justify"><b>GDPR:</b> Privacy by Design and <b>EU Data Sovereignty</b> (Denmark/Western Europe regions).</p>
+- <p align="justify"><b>NIST Cybersecurity Framework:</b> Detection, Protection, and Response capabilities.</p>
 
 ---
 
@@ -129,22 +133,20 @@ The specific automation script for secure compute provisioning and SIEM telemetr
 
 ________________________________________________________________________________________________________________________________________
 
-### 🛡️ Module 4 (Part 1): Platform Auditing & Incident Management
+## 🛡️ Module 4 (Part 1): Platform Auditing & Incident Management
 
-#### 📋 Change Control Record (Change Request CR-2026-004)
-<p align="justify"><i>
+### 📋 Change Control Record (Change Request CR-2026-004)
+<p align="justify"><b>Event:</b> Regional quota restriction for compute assets (SKU Not Available).</p>
+<p align="justify"><b>Technical Action:</b> Strategic pivot to Platform Governance. Instead of monitoring an individual asset, subscription-level auditing was activated.</p>
+<p align="justify"><b>Security Outcome:</b> Centralization of the Azure Activity Log into the Log Analytics Workspace (The Vault).</p>
 
-- **Event:** Regional quota restriction for compute assets (SKU Not Available).
-- **Technical Action:** Strategic pivot to **Platform Governance**. Instead of monitoring an individual asset, subscription-level auditing was activated.
-- **Security Outcome:** Centralization of the **Azure Activity Log** into the Log Analytics Workspace (The Vault).</i></p>
+### 🔍 Platform Audit Evidence (ISO 27001 A.8.15)
+<p align="justify">Bulk export of administrative and security events has been configured towards the regional SIEM in Amsterdam. This enables auditing of:</p>
+- <p align="justify">Resource creation/deletion attempts.</p>
+- <p align="justify">Network security policy changes.</p>
+- <p align="justify">Provider provisioning failures.</p>
 
-#### 🔍 Platform Audit Evidence (ISO 27001 A.8.15)
-Bulk export of administrative and security events has been configured towards the regional SIEM in Amsterdam. This enables auditing of:
-- Resource creation/deletion attempts.
-- Network security policy changes.
-- Provider provisioning failures.
-
-> **⚠️ Audit Note (Data Redaction):** The 'Caller' column (User Identity) has been intentionally filtered out from the evidence below to comply with **GDPR Data Minimization** and privacy best practices for public repositories.</i></p>
+<p align="justify">⚠️ <b>Audit Note (Data Redaction):</b> The 'Caller' column (User Identity) has been intentionally filtered out from the evidence below to comply with GDPR Data Minimization and privacy best practices for public repositories.</p>
 
 **KQL Query for Operations Auditing:**
 ```kusto
@@ -153,50 +155,43 @@ AzureActivity
 | where TimeGenerated > ago(24h)
 | project TimeGenerated, OperationNameValue, ActivityStatusValue
 | order by TimeGenerated desc
-```</i></p>
+```
 
----
 <p align="justify">📸 <i><b>Platform Audit Evidence:</b> Real-time ingestion of Azure Activity Logs routed to the Amsterdam central repository, proving operational traceability under ISO 27001 requirements.</i></p>
 <p align="center">
   <img src="../EVIDENCE%20/Evidence_Lab4_Platform_Auditing_ActivityLog.png" alt="Platform Audit Evidence" width="90%"/>
 </p>
 
+---
 
-____________________________________________________________________________________________________________________________________
+## 🛡️ Module 4 (Part 2): SOC Validation & Incident Response
 
-### 🛡️ Module 4 (Part 2): SOC Validation & Incident Response
+<p align="justify">To validate the operational resilience of the architecture, I conducted a Live Security Validation to ensure the SIEM (Log Analytics) and the Alerting System were functioning according to professional standards.</p>
 
-To validate the operational resilience of the architecture, I conducted a Live Security Validation to ensure the SIEM (Log Analytics) and the Alerting System were functioning according to professional standards.</i></p>
-
-#### 📋 Compliance Mapping
-
-***ISO 27001:2022 Control A.8.15 & A.8.16:** Establishment of **Logging and Monitoring** activities to detect unauthorized resource <p align="justify"><i>modifications and ensure forensic traceability through the centralized SIEM.
-
-***NIST SP 800-61 / NIST CSF (Detection):** Alignment with the **Incident Handling Guide** by executing the Detection and Analysis phase through simulated adversarial activity.
-
-***GDPR Article 5 & 25:** Enforcement of **Data Minimization** and **Accountability** by protecting audit trails and redacting PII (Personally Identifiable Information) in public forensic reports.
-
-***NIS2 Directive:** Strengthening **Incident Management** and operational resilience through proactive monitoring and alerting systems for critical infrastructure.</i></p>
+### 📋 Compliance Mapping
+- <p align="justify"><b>ISO 27001:2022 Control A.8.15 & A.8.16:</b> Establishment of Logging and Monitoring activities to detect unauthorized resource modifications and ensure forensic traceability through the centralized SIEM.</p>
+- <p align="justify"><b>NIST SP 800-61 / NIST CSF (Detection):</b> Alignment with the Incident Handling Guide by executing the Detection and Analysis phase through simulated adversarial activity.</p>
+- <p align="justify"><b>GDPR Article 5 & 25:</b> Enforcement of Data Minimization and Accountability by protecting audit trails and redacting PII (Personally Identifiable Information) in public forensic reports.</p>
+- <p align="justify"><b>NIS2 Directive:</b> Strengthening Incident Management and operational resilience through proactive monitoring and alerting systems for critical infrastructure.</p>
   
-#### 🧪 Incident Simulation & Forensic Analysis
-<p align="justify"><i>I simulated an unauthorized resource modification to test detection capabilities:
-1. **Action:** Manual deletion of a Public IP resource via CLI.
-2. **Detection:** The **Azure Activity Log** successfully captured the `DELETE` event.
-3. **Traceability:** Using **KQL (Kusto Query Language)**, I extracted the evidence from the Vault, proving the exact timestamp and operation success.
-4. **Alerting:** Confirmed that the **Activity Log Alert** was triggered for this critical administrative change.
+### 🧪 Incident Simulation & Forensic Analysis
+<p align="justify">I simulated an unauthorized resource modification to test detection capabilities:</p>
+1. <p align="justify"><b>Action:</b> Manual deletion of a Public IP resource via CLI.</p>
+2. <p align="justify"><b>Detection:</b> The Azure Activity Log successfully captured the DELETE event.</p>
+3. <p align="justify"><b>Traceability:</b> Using KQL (Kusto Query Language), I extracted the evidence from the Vault, proving the exact timestamp and operation success.</p>
+4. <p align="justify"><b>Alerting:</b> Confirmed that the Activity Log Alert was triggered for this critical administrative change.</p>
 
-> **🔒 Security & Privacy Note (Data Redaction):** In the forensic evidence below, the 'Caller' column (User Identity) has been intentionally excluded. This follows **GDPR Data Minimization** principles and best practices for public repositories, ensuring that sensitive PII (Personally Identifiable Information) is not exposed while maintaining the technical integrity of the audit trail.</i></p>
+<p align="justify">🔒 <b>Security & Privacy Note (Data Redaction):</b> In the forensic evidence below, the 'Caller' column (User Identity) has been intentionally excluded. This follows GDPR Data Minimization principles and best practices for public repositories, ensuring that sensitive PII (Personally Identifiable Information) is not exposed while maintaining the technical integrity of the audit trail.</p>
 
 <p align="justify">📸 <i><b>SOC Validation Evidence:</b> SIEM Forensic verification of administrative activity telemetry. The audit trail records critical security events while enforcing strict GDPR masking policies.</i></p>
 <p align="center">
   <img src="../EVIDENCE%20/Evidence_Lab4_SOC_Validation.png" alt="SOC Validation Evidence" width="90%"/>
 </p>
 
+> **Final Conclusion:** This laboratory demonstrates a complete Secure-by-Design architecture. From isolated networking and identity-based access to a fully functional SOC with real-time alerting and forensic logging.
 
-> **Final Conclusion:** This laboratory demonstrates a complete **Secure-by-Design** architecture. From isolated networking and identity-based access to a fully functional SOC with real-time alerting and forensic logging.
-
-#### 📊 SOC Operational Dashboard
-<p align="justify"><i>To provide executive-level visibility, I developed a real-time dashboard using **KQL (Kusto Query Language)**. This visualization summarizes all platform operations (Success vs. Failure), enabling the SOC team to monitor the overall health of the Azure infrastructure at a glance.</i></p>
+### 📊 SOC Operational Dashboard
+<p align="justify">To provide executive-level visibility, I developed a real-time dashboard using KQL (Kusto Query Language). This visualization summarizes all platform operations (Success vs. Failure), enabling the SOC team to monitor the overall health of the Azure infrastructure at a glance.</p>
 
 **KQL Visualization Query:**
 ```kusto
@@ -205,66 +200,59 @@ AzureActivity
 | summarize count() by ActivityStatusValue 
 | render piechart
 ```
-![SOC Operations Dashboard](./EVIDENCE/SOC_Operations_Dashboard.png) 
-
 ---
 
-### 🛡️ Module 4 (Part 3): Advanced SOC Operations & Infrastructure Hardening
-<p align="justify"><i>This final module focuses on centralizing telemetry, validating incident response, and hardening the network perimeter, aligned with international security frameworks.</i></p>
+## 🛡️ Module 4 (Part 3): Advanced SOC Operations & Infrastructure Hardening
 
-#### 📊 SOC Operational Dashboard & KQL Analysis (ISO 27001 A.12.4.1)
-<p align="justify"><i>To provide executive-level visibility and satisfy **Continuous Monitoring** requirements, I developed a real-time dashboard using **KQL (Kusto Query Language)**. This visualization summarizes all platform operations, enabling the SOC team to monitor infrastructure health at a glance.</i></p>
+<p align="justify">This final module focuses on centralizing telemetry, validating incident response, and hardening the network perimeter, aligned with international security frameworks.</p>
+
+### 📊 SOC Operational Dashboard & KQL Analysis (ISO 27001 A.12.4.1)
+<p align="justify">To provide executive-level visibility and satisfy <b>Continuous Monitoring</b> requirements, I developed a real-time dashboard using <b>KQL (Kusto Query Language)</b>. This visualization summarizes all platform operations, enabling the SOC team to monitor infrastructure health at a glance.</p>
 
 **KQL Visualization Query:**
 ```kusto
 AzureActivity 
 
+
 | summarize count() by ActivityStatusValue 
 | render piechart
 ```
-![SOC Operations Dashboard](./EVIDENCE/SOC_Operations_Dashboard.png)
 
-#### 🧪 Incident Simulation & Traceability (NIST SP 800-61)
-### I conducted a **Live Security Validation** to test the SIEM's alerting capabilities and incident handling flow:
+### 🧪 Incident Simulation & Traceability (NIST SP 800-61)
+<p align="justify">I conducted a Live Security Validation to test the SIEM's alerting capabilities and incident handling flow:</p>
+- <p align="justify"><b>Simulation:</b> Manual deletion of a Public IP resource via CLI.</p>
+- <p align="justify"><b>Detection:</b> The Azure Activity Log successfully captured the DELETE event.</p>
+- <p align="justify"><b>Traceability:</b> Verified accountability through forensic KQL queries, ensuring a complete audit trail and Non-repudiation (ISO 27001 A.12.4.3).</p>
 
-1. **Simulation:** Manual deletion of a Public IP resource via CLI.
-2. **Detection:** The **Azure Activity Log** successfully captured the `DELETE` event.
-3. **Traceability:** Verified accountability through forensic KQL queries, ensuring a complete audit trail and **Non-repudiation** (ISO 27001 A.12.4.3).
+<p align="justify">🔒 <b>Security & Privacy Note (Data Redaction):</b> In the forensic evidence below, the 'Caller' column has been excluded to comply with GDPR Data Minimization and privacy best practices for public repositories.</p>
 
-> **🔒 Security & Privacy Note (Data Redaction):** In the forensic evidence below, the 'Caller' column has been excluded to comply with **GDPR Data Minimization** and privacy best practices for public repositories.
-
-#### 🏰 Advanced Network Hardening (Zero Trust - ISO 27001 A.13.1.1)
-To eliminate the attack surface and implement **Network Segregation**, I implemented an **Azure Bastion Host**:
-
-- **Secure Access:** Management is now performed via SSL (Port 443), removing the need for Public IPs on internal assets and mitigating brute-force risks.
-
-- **Inventory Audit:** Conducted a full **Shadow IT cleanup**, decommissioning redundant VNets in non-EU regions to ensure compliance with **Sovereignty** and **FinOps** best practices.
+### 🏰 Advanced Network Hardening (Zero Trust - ISO 27001 A.13.1.1)
+<p align="justify">To eliminate the attack surface and implement Network Segregation, I implemented an Azure Bastion Host:</p>
+- <p align="justify"><b>Secure Access:</b> Management is now performed via SSL (Port 443), removing the need for Public IPs on internal assets and mitigating brute-force risks.</p>
+- <p align="justify"><b>Inventory Audit:</b> Conducted a full Shadow IT cleanup, decommissioning redundant VNets in non-EU regions to ensure compliance with Sovereignty and FinOps best practices.</p>
 
 <p align="justify">📸 <i><b>Network Hardening Audit:</b> Complete infrastructure audit validation after shadow-IT decommissioning, proving a secure perimeter isolation with Azure Bastion.</i></p>
 <p align="center">
   <img src="../EVIDENCE%20/Evidence_Lab4_Network_Hardening_Audit.png" alt="Network Hardening Audit" width="90%"/>
 </p>
 
-#### 🛠️ Automation Tools
-The complete automation script for these governance and hardening tasks is available here: [SOC_and_Network_Hardening.sh](./SOC_and_Network_Hardening.sh)
+**🛠️ Automation Tools**
+<p align="justify">The complete automation script for these governance and hardening tasks is available here: [SOC_and_Network_Hardening.sh](./SOC_and_Network_Hardening.sh)</p>
 
 ---
-🛡️ Module 4 (Part 4): Workload Security & SIEM Integration (ISO 27001 / NIS2 / GDPR)
-### To close the security loop, I deployed a private Linux node and automated its telemetry ingestion, ensuring full visibility of the hospital's internal assets:
-<p align="justify">
 
-1. **Privacy by Design (GDPR Art. 25):** The VM was deployed in the `Subnet-FrontEnd` with **Zero Public Exposure** (no Public IP). This ensures the instance is invisible to the public internet, mitigating 100% of external brute-force attempts.
+## 🛡️ Module 4 (Part 4): Workload Security & SIEM Integration (ISO 27001 / NIS2 / GDPR)
 
-2. **Automated Auditing (NIS2 & ISO 27001 A.12.4.1):** Injected the **Log Analytics Agent** via Azure VM Extensions. This automation ensures that every new compute resource is under surveillance from its first second of life.
-
-3. **Connectivity Validation (Heartbeat):** Verified the real-time **Heartbeat** signal in the SIEM. This proves the end-to-end telemetry pipeline is operational, from the private network to the centralized log vault in Amsterdam.</i></p>
+<p align="justify">To close the security loop, I deployed a private Linux node and automated its telemetry ingestion, ensuring full visibility of the hospital's internal assets:</p>
+- <p align="justify"><b>Privacy by Design (GDPR Art. 25):</b> The VM was deployed in the Subnet-FrontEnd with Zero Public Exposure (no Public IP). This ensures the instance is invisible to the public internet, mitigating 100% of external brute-force attempts.</p>
+- <p align="justify"><b>Automated Auditing (NIS2 & ISO 27001 A.12.4.1):</b> Injected the Log Analytics Agent via Azure VM Extensions. This automation ensures that every new compute resource is under surveillance from its first second of life.</p>
+- <p align="justify"><b>Connectivity Validation (Heartbeat):</b> Verified the real-time Heartbeat signal in the SIEM. This proves the end-to-end telemetry pipeline is operational, from the private network to the centralized log vault in Amsterdam.</p>
 
 <p align="justify">📸 <i><b>VM Heartbeat Evidence:</b> Active heartbeat validation signals inside the SIEM vault, demonstrating immediate continuous monitoring coverage for internal assets.</i></p>
 <p align="center">
   <img src="../EVIDENCE%20/Evidence_Lab4_VM_Heartbeat.png" alt="VM Heartbeat Evidence" width="90%"/>
 </p>
 
-#### 🛠️ Automation & Monitoring Tools
-The specific automation script for secure workload provisioning and SIEM integration is available here: [Workload_Security_and_Monitoring.sh](./Workload_Security_and_Monitoring.sh)
-
+**🛠️ Automation & Monitoring Tools**
+<p align="justify">The specific automation script for secure workload provisioning and SIEM integration is available here: [Workload_Security_and_Monitoring.sh](./Workload_Security_and_Monitoring.sh)</p>
 
