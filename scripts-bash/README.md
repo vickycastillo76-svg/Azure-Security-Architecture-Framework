@@ -46,6 +46,7 @@
 <p align="justify">Implementation of a Zero Trust network perimeter and micro-segmentation using automated security controls.</p>
 
 ### 📋 Compliance Mapping
+
 - <p align="justify"><b>ISO 27001:2022 Control A.8.20 & A.8.22:</b> Establishing network boundaries and segregating the Front-End subnet from the rest of the environment.</p>
 - <p align="justify"><b>ISO 27001:2022 Control A.8.24:</b> Cryptographic enforcement by restricting insecure protocols (HTTP/80) and permitting only encrypted channels (HTTPS/443).</p>
 - <p align="justify"><b>Security by Design:</b> Ensuring all network assets are provisioned within a predefined security perimeter (NSG-to-Subnet binding).</p>
@@ -78,20 +79,23 @@ Subnet-FrontEnd  .../providers/Microsoft.Network/networkSecurityGroups/NSG-Vicky
 ```
 
 <p align="justify">📸 <i><b>Network Hardening Audit Verification:</b> Architectural evidence confirming successful NSG perimeter isolation and explicit whitelisting configurations.</i></p>
+
 <p align="center">
   <img src="../EVIDENCE%20/Evidence_Lab2_Network_Security_Rules.png" alt="Network Hardening Audit Verification" width="90%"/>
 </p>
 
 **🛠️ Automation & Network Tools**
+
 <p align="justify">The specific automation script for VNet architecture, Subnetting, and NSG rules is available here: [Network_Security_Hardening.sh](./Network_Security_Hardening.sh)</p>
 
-________________________________________________________________________________________________________________________________________
+---
 
 ## 🛡️ Module 3: Compute Hardening & Centralized Logging
 
 <p align="justify">Implementation of secure compute assets under a Zero Trust model and centralized telemetry for audit readiness.</p>
 
 ### 📋 Compliance Mapping
+
 - <p align="justify"><b>ISO 27001:2022 Control A.8.2 & A.8.15:</b> Enforcement of privileged access via Managed Identities (secret-less auth) and establishment of logging repositories for event monitoring.</p>
 - <p align="justify"><b>ISO 27001:2022 Control A.8.22:</b> Compute isolation by disabling Public IP addresses, ensuring resources are only accessible via private backbones.</p>
 - <p align="justify"><b>GDPR Article 25:</b> Data Protection by Design (EEA Sovereignty) by enforcing data residency within the European Economic Area.</p>
@@ -122,11 +126,13 @@ PrincipalID: 088b02b1-dce4-43a0-842d-60ff0d90c893
 ```
 
 <p align="justify">📸 <i><b>Lab3 Compute Logging Validation:</b> Forensic proof of centralized logging and hardening metrics, ensuring immutable record persistence within the secure vault.</i></p>
+
 <p align="center">
   <img src="../EVIDENCE%20/Evidence_Lab3_Compute_Logging_Validation.png" alt="Lab 3 Compute Logging Validation" width="90%"/>
 </p>
 
 **🛠️ Automation & Hardening Tools**
+
 <p align="justify">The specific automation script for secure compute provisioning and SIEM telemetry baseline is available here: [Compute_Logging_Hardening.sh](./Compute_Logging_Hardening.sh)</p>
 
 ________________________________________________________________________________________________________________________________________
