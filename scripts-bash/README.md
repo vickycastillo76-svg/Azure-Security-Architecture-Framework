@@ -78,7 +78,11 @@ Subred           NSG_Asociado
 Subnet-FrontEnd  .../providers/Microsoft.Network/networkSecurityGroups/NSG-Vicky
 ```
 
-![Network Hardening Audit Verification](../evidence/Evidence_Lab2_Network_Security_Rules.png)
+<p align="justify">📸 <i><b>Network Hardening Audit Verification:</b> Architectural evidence confirming successful NSG perimeter isolation and explicit whitelisting configurations.</i></p>
+
+![VNet Inventory](../evidence/vnet-inventory.png)
+
+![Security Binding Evidence](../evidence/security-binding-evidence.png)
 
 ---
 
@@ -123,7 +127,10 @@ Log-Security-Central   westeurope   Succeeded            382e31f7-1981-40f5-b071
 PrincipalID: 088b02b1-dce4-43a0-842d-60ff0d90c893
 ```
 
-![Lab 3 Compute Logging Validation](../evidence/Evidence_Lab3_Compute_Logging_Validation.png)
+<p align="justify">📸 <i><b>Lab3 Compute Logging Validation:</b> Forensic proof of centralized logging and hardening metrics, ensuring immutable record persistence within the secure vault.</i></p>
+
+![Lab 3 Compute Logging Validation](../evidence/Lab3_Compute_Logging_Validation.png)
+
 ---
 
 **🛠️ Automation & Hardening Tools**
