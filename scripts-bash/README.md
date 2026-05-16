@@ -42,19 +42,18 @@
   -------------------------------------------------------------------------------------------------------------------------------
 
 ## 🛡️ Module 2: Network Security & Infrastructure Hardening
-Implementation of a **Zero Trust** network perimeter and micro-segmentation.
+
+<p align="justify">Implementation of a Zero Trust network perimeter and micro-segmentation using automated security controls.</p>
 
 ### 📋 Compliance Mapping
-<p align="justify"><i>- 
-
-- **ISO 27001:2022 Control A.8.20 & A.8.22:** Establishing network boundaries and segregating the Front-End subnet from the rest of the environment.
-- **ISO 27001:2022 Control A.8.24:** Cryptographic enforcement by restricting insecure protocols (HTTP/80) and permitting only encrypted channels (HTTPS/443).
-- **Security by Design:** Ensuring all network assets are provisioned within a predefined security perimeter (NSG-to-Subnet binding).</i></p>
+- <p align="justify"><b>ISO 27001:2022 Control A.8.20 & A.8.22:</b> Establishing network boundaries and segregating the Front-End subnet from the rest of the environment.</p>
+- <p align="justify"><b>ISO 27001:2022 Control A.8.24:</b> Cryptographic enforcement by restricting insecure protocols (HTTP/80) and permitting only encrypted channels (HTTPS/443).</p>
+- <p align="justify"><b>Security by Design:</b> Ensuring all network assets are provisioned within a predefined security perimeter (NSG-to-Subnet binding).</p>
 
 ### 🔍 Technical Audit Logs (CLI Verification)
 
-**1. Network Security Rules Matrix (Compliance A.8.20)**  
-Verified prioritized rules for Administrative (SSH/22) and Business (HTTPS/443) traffic.
+<p align="justify"><b>1. Network Security Rules Matrix (Compliance A.8.20):</b> Verified prioritized rules for Administrative (SSH/22) and Business (HTTPS/443) traffic.</p>
+
 ```text
 Name               ResourceGroup    Priority    Access    Protocol    Direction    DestinationPortRanges
 -----------------  ---------------  ----------  --------  ----------  -----------  -----------------------
@@ -62,24 +61,29 @@ Allow-SSH-Vicky    RG-SecurityLab   100         Allow     Tcp         Inbound   
 Allow-HTTPS-Vicky  RG-SecurityLab   110         Allow     Tcp         Inbound      443
 ```
 
-**2. Virtual Network Inventory (Asset Management A.5.9)**  
-Verification of address space allocation for the security lab environment.
+<p align="justify"><b>2. Virtual Network Inventory (Asset Management A.5.9):</b> Verification of address space allocation for the security lab environment.</p>
+
 ```text
 Nombre            Rango
 ----------------  -----------
 VNet-SecurityLab  10.0.0.0/16
 ```
 
-**3. Security Binding Verification (Network Segregation A.8.22)**  
-Final confirmation of the association between the Subnet and the Network Security Group (NSG).
+<p align="justify"><b>3. Security Binding Verification (Network Segregation A.8.22):</b> Final confirmation of the association between the Subnet and the Network Security Group (NSG).</p>
+
 ```text
 Subred           NSG_Asociado
 ---------------  ------------------------------------------------------------------------------------------
 Subnet-FrontEnd  .../providers/Microsoft.Network/networkSecurityGroups/NSG-Vicky
 ```
 
-#### 🛠️ Automation & Network Tools
-The specific automation script for VNet architecture, Subnetting, and NSG rules is available here: [Network_Security_Hardening.sh](./Network_Security_Hardening.sh)
+<p align="justify">📸 <i><b>Network Hardening Audit Verification:</b> Architectural evidence confirming successful NSG perimeter isolation and explicit whitelisting configurations.</i></p>
+<p align="center">
+  <img src="../EVIDENCE%20/Evidence_Lab2_Network_Security_Hardening_Matrix.png" alt="Network Hardening Audit Verification" width="90%"/>
+</p>
+
+**🛠️ Automation & Network Tools**
+<p align="justify">The specific automation script for VNet architecture, Subnetting, and NSG rules is available here: [Network_Security_Hardening.sh](./Network_Security_Hardening.sh)</p>
 
 ________________________________________________________________________________________________________________________________________
 
