@@ -2,6 +2,12 @@
 
 ## Author: Victoria Castillo (Vicky Castillo)
 **Headline:** Cloud Security & Governance Engineer | Senior IT Auditor (ISO 27001 & TISAX), GDPR, NIS2 | DevSecOps & IaC
+---
+
+> 🌀 **Continuous Assurance & Living Lab Notice:**  
+> <p align="justify"><i>This repository operates as an active, iterative Cloud Engineering sandbox. Architectures, compliance mappings, and automation workflows are subject to continuous deployment, security enhancement, and code refactoring. Unfinished modules or active feature branches represent ongoing infrastructure sprints and live code stress testing, mimicking real-world agile environments under active change management.</i></p>
+
+---
 
 ---
 
