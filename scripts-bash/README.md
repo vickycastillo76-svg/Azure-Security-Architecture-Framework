@@ -21,25 +21,23 @@
 
 ---
 
-### 🛡️ Module 1: Automated Identity & Access Management (IAM)
-<p align="justify"><i>This project demonstrates the automation of identity lifecycle management in Azure Entra ID (formerly Azure AD) using Azure CLI.</i></p>
+## 🛡️ Module 1: Automated Identity & Access Management (IAM)
+
+<p align="justify">This project demonstrates the automation of identity lifecycle management in Azure Entra ID (formerly Azure AD) using Azure CLI.</p>
 
 ### 📋 Compliance & Governance Mapping
-<p align="justify"><i>- **ISO 27001:2022 Control A.5.15 & A.5.18:** Automated provisioning of identities and enforcement of Role-Based Access Control (RBAC).
-
-- **ISO 27001:2022 Control A.8.28:** Secure coding practices by eliminating hardcoded secrets and using environment variables.
-- **GDPR Article 5:** Implementation of the **Principle of Least Privilege (PoLP)** to ensure data confidentiality and integrity.
-- **NIS2 Directive:** Strengthening supply chain security through automated asset governance.</i></p>
+- <p align="justify"><b>ISO 27001:2022 Control A.5.15 & A.5.18:</b> Automated provisioning of identities and enforcement of Role-Based Access Control (RBAC).</p>
+- <p align="justify"><b>ISO 27001:2022 Control A.8.28:</b> Secure coding practices by eliminating hardcoded secrets and using environment variables.</p>
+- <p align="justify"><b>GDPR Article 5:</b> Implementation of the Principle of Least Privilege (PoLP) to ensure data confidentiality and integrity.</p>
+- <p align="justify"><b>NIS2 Directive:</b> Strengthening supply chain security through automated asset governance.</p>
 
 ### 🚀 Technical Implementation
-<p align="justify"><i>- 
+- <p align="justify"><b>Bulk Provisioning:</b> Automated creation of 10 security groups and 15 users.</p>
+- <p align="justify"><b>Data Integrity:</b> Used ObjectIDs for membership assignment to prevent syntax errors and ensure precise mapping.</p>
+- <p align="justify"><b>Security Best Practices:</b> Obfuscation of sensitive tenant information and credential management.</p>
 
-- **Bulk Provisioning:** Automated creation of 10 security groups and 15 users.
-- **Data Integrity:** Used ObjectIDs for membership assignment to prevent syntax errors and ensure precise mapping.
-- **Security Best Practices:** Obfuscation of sensitive tenant information and credential management.</i></p>
-
-  #### 🛠️ Automation & Identity Tools
-<p align="justify"><i>The specific automation script for RBAC, Managed Identities, and User Provisioning is available here: [Identity_Management_Lab.sh](./Identity_Management_Lab.sh)</i></p>
+**🛠️ Automation & Identity Tools**
+<p align="justify">The specific automation script for RBAC, Managed Identities, and User Provisioning is available here: [Identity_Management_Lab.sh](./Identity_Management_Lab.sh)</p>
 
   -------------------------------------------------------------------------------------------------------------------------------
 
@@ -85,51 +83,47 @@ The specific automation script for VNet architecture, Subnetting, and NSG rules 
 
 ________________________________________________________________________________________________________________________________________
 
-### 🛡️ Module 3: Compute Hardening & Centralized Logging
+## 🛡️ Module 3: Compute Hardening & Centralized Logging
 
-Implementation of secure compute assets under a **Zero Trust** model and centralized telemetry for audit readiness.
+<p align="justify">Implementation of secure compute assets under a Zero Trust model and centralized telemetry for audit readiness.</p>
 
-#### 📋 Compliance Mapping
-<p align="justify"><i>-
+### 📋 Compliance Mapping
+- <p align="justify"><b>ISO 27001:2022 Control A.8.2 & A.8.15:</b> Enforcement of privileged access via Managed Identities (secret-less auth) and establishment of logging repositories for event monitoring.</p>
+- <p align="justify"><b>ISO 27001:2022 Control A.8.22:</b> Compute isolation by disabling Public IP addresses, ensuring resources are only accessible via private backbones.</p>
+- <p align="justify"><b>GDPR Article 25:</b> Data Protection by Design (EEA Sovereignty) by enforcing data residency within the European Economic Area.</p>
+- <p align="justify"><b>NIS2 Directive:</b> Strengthening asset resilience and monitoring capabilities through centralized telemetry.</p>
 
-***ISO 27001:2022 Control A.8.2 & A.8.15:** Enforcement of privileged access via **Managed Identities** (secret-less auth) and establishment of logging repositories for event monitoring.
-***ISO 27001:2022 Control A.8.22:** Compute isolation by disabling **Public IP addresses**, ensuring resources are only accessible via private backbones.
-***GDPR Article 25:** **Data Protection by Design** (EEE Sovereignty) by enforcing data residency within the European Economic Area.
-***NIS2 Directive:** Strengthening asset resilience and monitoring capabilities through **centralized telemetry**.</i></p>
+### 🔍 Technical Audit Logs (CLI Verification)
 
-#### 🔍 Technical Audit Logs (CLI Verification)
-
-##### 1. Secure Compute Inventory (Compliance A.8.22)
-Verification of private-only provisioning and **System-Assigned Managed Identity** activation.
+<p align="justify"><b>1. Secure Compute Inventory (Compliance A.8.22):</b> Verification of private-only provisioning and System-Assigned Managed Identity activation.</p>
 
 ```text
 Name                Identity_Type    PrivateIP    PublicIP    Status
--------------      -------------  -----------  ----------  ---------
+------------------  ---------------  -----------  ----------  ---------
 VM-Security-Prod    SystemAssigned   10.3.1.4     None        Succeeded
 ```
 
-##### 2. Centralized Telemetry Repository (Audit Trail A.8.15)
-Final confirmation of the **Log Analytics Workspace** for SIEM/SOC integration.
+<p align="justify"><b>2. Centralized Telemetry Repository (Audit Trail A.8.15):</b> Final confirmation of the Log Analytics Workspace for SIEM/SOC integration.</p>
 
 ```text
-
 Workspace_Name         Region       Provisioning_State    Customer_ID
---------------        ----------  -------------------  ------------------
+---------------------  -----------  -------------------  ------------------------------------
 Log-Security-Central   westeurope   Succeeded            382e31f7-1981-40f5-b071-1a1b3fc56b7c
 ```
 
-##### 3. Identity Security Principal (Zero Trust A.8.2)
-The VM has been granted a **unique security identity** to eliminate the need for hardcoded credentials:
+<p align="justify"><b>3. Identity Security Principal (Zero Trust A.8.2):</b> The VM has been granted a unique security identity to eliminate the need for hardcoded credentials:</p>
 
-**PrincipalID:** `088b02b1-dce4-43a0-842d-60ff0d90c893`
+```text
+PrincipalID: 088b02b1-dce4-43a0-842d-60ff0d90c893
+```
 
----
-### 📸 Evidence Gallery - Lab 3
-<img width="1713" height="237" alt="Lab3_Compute_Logging_Validation" src="https://github.com/user-attachments/assets/37e1d576-d4e3-4fd2-ba10-d63918f02a5d" />
+<p align="justify">📸 <i><b>Lab3 Compute Logging Validation:</b> Forensic proof of centralized logging and hardening metrics, ensuring immutable record persistence within the secure vault.</i></p>
+<p align="center">
+  <img src="../EVIDENCE%20/Evidence_Lab3_Compute_Logging_Validation.png" alt="Lab 3 Compute Logging Validation" width="90%"/>
+</p>
 
-#### 🛠️ Automation & Hardening Tools
-The specific automation script for secure compute provisioning and SIEM telemetry baseline is available here: [Compute_Logging_Hardening.sh](./Compute_Logging_Hardening.sh)
-
+**🛠️ Automation & Hardening Tools**
+<p align="justify">The specific automation script for secure compute provisioning and SIEM telemetry baseline is available here: [Compute_Logging_Hardening.sh](./Compute_Logging_Hardening.sh)</p>
 
 ________________________________________________________________________________________________________________________________________
 
