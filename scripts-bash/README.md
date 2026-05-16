@@ -80,9 +80,9 @@ Subnet-FrontEnd  .../providers/Microsoft.Network/networkSecurityGroups/NSG-Vicky
 
 <p align="justify">📸 <i><b>Network Hardening Audit Verification:</b> Architectural evidence confirming successful NSG perimeter isolation and explicit whitelisting configurations.</i></p>
 
-<p align="center">
-  <img src="../EVIDENCE%20/Evidence_Lab2_Network_Security_Rules.png" alt="Network Hardening Audit Verification" width="90%"/>
-</p>
+![Network Hardening Audit Verification](../EVIDENCE%20/Evidence_Lab2_Network_Security_Rules.png)
+
+---
 
 **🛠️ Automation & Network Tools**
 
@@ -127,9 +127,9 @@ PrincipalID: 088b02b1-dce4-43a0-842d-60ff0d90c893
 
 <p align="justify">📸 <i><b>Lab3 Compute Logging Validation:</b> Forensic proof of centralized logging and hardening metrics, ensuring immutable record persistence within the secure vault.</i></p>
 
-<p align="center">
-  <img src="../EVIDENCE%20/Evidence_Lab3_Compute_Logging_Validation.png" alt="Lab 3 Compute Logging Validation" width="90%"/>
-</p>
+![Lab 3 Compute Logging Validation](../EVIDENCE%20/Evidence_Lab3_Compute_Logging_Validation.png)
+
+---
 
 **🛠️ Automation & Hardening Tools**
 
