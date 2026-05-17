@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU SOVEREIGN VOICE - DATA VAULT</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #58a6ff;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .alert-box {
+            background-color: rgba(248, 81, 73, 0.1);
+            border: 1px solid #f85149;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+            display: none;
+        }
+        .btn-exploit {
+            background-color: #238636;
+            color: #ffffff;
+            border: 1px solid rgba(240, 246, 252, 0.1);
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .btn-exploit:hover {
+            background-color: #2ea043;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕵️‍♂️ Operation Sovereign Voice: Adversary Honeypot Ingress</h1>
+        
+        <p><b>🚨 SECURITY CLEARANCE REQUIRED // TOP SECRET // EU EYES ONLY</b></p>
+        
+        <p>Welcome to the secure storage boundary for European Data Sovereignty assets. This interface grants operational access to the neural weights repository representing classified synthetic voice cloning models for high-level EU diplomatic authorities. Unauthorized reconnaissance or exfiltration vectors are strictly prohibited under the <b>NIS2 Directive</b> and international cybersecurity defense frameworks.</p>
+
+        <p><b>Target Asset Registry:</b> <code>ec_president_voice_weights.bin</code> (Size: 2.1 GB / Cryptographic AMD SEV-SNP Isolated RAM State).</p>
+
+        <!-- EL BOTÓN TRAMPA PARA EL RECLUTADOR -->
+        <button class="btn-exploit" onclick="executeDeceptionLoop()">🔓 Execute Automated Exfiltration Plan (APT-44 Model)</button>
+
+        <!-- LA VENTANA DE ERROR ENGAÑOSO QUE SALTA AL CLICAR -->
+        <div id="deceptionAlert" class="alert-box">
+            <h3 style="color: #f85149; margin-top: 0;">🛑 OPERATION INTERCEPTED BY ACTIVE PERIMETER RESILIENCE</h3>
+            <p><b>Security Control Enforced:</b> ISO/IEC 27001:2022 Control A.8.16 & A.8.24 (Cryptographic Layer 7 Deep Packet Inspection).</p>
+            <p><b>Mitigation Logic:</b> The Azure Web Application Firewall (WAF v2) operating in strict <b>Prevention Mode</b> has detected a simulated injection payload. In alignment with Defense in Depth principles, your connection lifecycle signature and source IP have been captured, geo-referenced, and hardlocked into the centralized SIEM Workspace vault.</p>
+            <p><i>Status: Adversary operational footprint compromised. Compliance guardrails enforced successfully.</i></p>
+        </div>
+    </div>
+
+    <script>
+        function executeDeceptionLoop() {
+            // 1. Desplegamos visualmente la ventana de error justificada
+            document.getElementById('deceptionAlert').style.display = 'block';
+            
+            // 2. DISPARAMOS EL RECURSO DE AUDIO DE ELEVENLABS
+            // Simulamos la llamada web interactiva consumiendo un archivo de audio previamente sintetizado por la API
+            console.log("[*] Disparando alerta de voz sintética de alta fidelidad desde ElevenLabs...");
+            
+            // Usamos un sintetizador nativo del navegador como fallback inmediato para pruebas en frío
+            let alertText = "Operation Intercepted. Compliance Guardrails Enforced. Adversary signature logged into SIEM Workspace under NIS2 Directive.";
+            let speech = new SpeechSynthesisUtterance(alertText);
+            speech.lang = 'en-US';
+            speech.volume = 1;
+            speech.rate = 0.95;
+            speech.pitch = 1;
+            
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>
