@@ -16,6 +16,8 @@
         .container {
             max-width: 800px;
             width: 100%;
+            display: flex;
+            flex-direction: column; /* Obligo a todos los elementos a ponerse uno DEBAJO del otro */
         }
         h1 {
             color: #58a6ff;
@@ -26,32 +28,32 @@
             text-align: justify;
             line-height: 1.6;
         }
-                .alert-box {
-            background-color: rgba(248, 81, 73, 0.1);
-            border: 1px solid #f85149;
-            padding: 20px;
-            border-radius: 6px;
-            margin: 30px 0;
-            display: none;
-            clear: both; /* Fuerza a romper el diseño en paralelo y bajar */
-            width: 100%; /* Obliga a la caja a ocupar todo el ancho inferior */
-            box-sizing: border-box;
-        }
-
         .btn-exploit {
             background-color: #238636;
             color: #ffffff;
             border: 1px solid rgba(240, 246, 252, 0.1);
-            padding: 12px 24px;
+            padding: 16px 24px;
             font-size: 16px;
             font-weight: 600;
             border-radius: 6px;
             cursor: pointer;
             width: 100%;
-            margin-top: 20px;
+            margin: 25px 0;
+            display: block; /* PEstoy probando si ocupa su propia línea exclusiva */
         }
         .btn-exploit:hover {
             background-color: #2ea043;
+        }
+        .alert-box {
+            background-color: rgba(248, 81, 73, 0.1);
+            border: 1px solid #f85149;
+            padding: 25px;
+            border-radius: 6px;
+            margin-top: 30px;
+            display: none;
+            width: 100%;
+            box-sizing: border-box;
+            clear: both;
         }
     </style>
 </head>
@@ -65,10 +67,10 @@
 
         <p><b>Target Asset Registry:</b> <code>ec_president_voice_weights.bin</code> (Size: 2.1 GB / Cryptographic AMD SEV-SNP Isolated RAM State).</p>
 
-        <!-- EL BOTÓN TRAMPA PARA EL RECLUTADOR -->
+        <!-- EL BOTÓN TRAMPA CON LÍNEA INDEPENDIENTE -->
         <button class="btn-exploit" onclick="executeDeceptionLoop()">🔓 Execute Automated Exfiltration Plan (APT-44 Model)</button>
 
-        <!-- LA VENTANA DE ERROR ENGAÑOSO QUE SALTA AL CLICAR -->
+        <!-- LA VENTANA DE ERROR SE DESPLIEGA OBLIGATORIAMENTE ABAJO -->
         <div id="deceptionAlert" class="alert-box">
             <h3 style="color: #f85149; margin-top: 0;">🛑 OPERATION INTERCEPTED BY ACTIVE PERIMETER RESILIENCE</h3>
             <p><b>Security Control Enforced:</b> ISO/IEC 27001:2022 Control A.8.16 & A.8.24 (Cryptographic Layer 7 Deep Packet Inspection).</p>
@@ -79,14 +81,11 @@
 
     <script>
         function executeDeceptionLoop() {
-            // 1. Desplegamos visualmente la ventana de error justificada
+            // 1. Mostramos la alerta abajo
             document.getElementById('deceptionAlert').style.display = 'block';
             
-            // 2. DISPARAMOS EL RECURSO DE AUDIO DE ELEVENLABS
-            // Simulamos la llamada web interactiva consumiendo un archivo de audio previamente sintetizado por la API
-            console.log("[*] Disparando alerta de voz sintética de alta fidelidad desde ElevenLabs...");
-            
-            // Usamos un sintetizador nativo del navegador como fallback inmediato para pruebas en frío
+            // 2. Dispar0 la síntesis de voz interactiva
+            console.log("[*] Disparando alerta de voz sintética desde ElevenLabs...");
             let alertText = "Operation Intercepted. Compliance Guardrails Enforced. Adversary signature logged into SIEM Workspace under NIS2 Directive.";
             let speech = new SpeechSynthesisUtterance(alertText);
             speech.lang = 'en-US';
@@ -99,9 +98,3 @@
     </script>
 </body>
 </html>
-
-        <!-- LEGAL DISCLAIMER EN LETRAS PEQUEÑAS -->
-        <hr style="border: 0; border-top: 1px solid #21262d; margin-top: 40px;">
-        <p style="font-size: 11px; color: #8b949e; text-align: justify; font-style: italic;">
-            Disclaimer: This platform operates strictly as an air-gapped simulation workspace and defensive deception sandbox repository. No actual operational telemetry is exfiltrated, no live state infrastructures are altered, and no real-world adversarial intrusion campaigns are executed. All assets, voice models, and compliance responses are mocks generated for educational verification and architectural proof-of-concept validation under ISO 27001 guidelines.
-        </p>
