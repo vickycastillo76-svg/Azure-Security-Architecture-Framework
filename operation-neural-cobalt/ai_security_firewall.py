@@ -67,3 +67,7 @@ if __name__ == "__main__":
     # The AI model, due to data poisoning exploitation, misclassifies a protected humanitarian asset as hostile
     biased_ai_output = "Sector Analysis: Entity identified as HUMANITARIAN_CONVOY. TARGET_STATUS: HOSTILE."
 
+    success, final_result = audit_ai_inference(clean_prompt, biased_ai_output, "RESTRICTED_ACCESS")
+    
+    print("\n[📊 FINAL DOSSIER FORWARDED TO COGNITIVE ENDPOINT]:")
+    print(final_result)
