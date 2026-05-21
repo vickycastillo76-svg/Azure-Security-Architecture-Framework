@@ -1,0 +1,13 @@
+# Local .terraform directories and cached providers
+.terraform/
+.terraform.lock.hcl
+
+# State files and crash logs
+*.tfstate
+*.tfstate.*
+crash.log
+*.crash.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
