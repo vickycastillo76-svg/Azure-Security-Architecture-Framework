@@ -245,7 +245,7 @@ AzureActivity
 
 <p align="justify">To close the security loop, I deployed a private Linux node and automated its telemetry ingestion, ensuring full visibility of the hospital's internal assets:</p>
 - <p align="justify"><b>Privacy by Design (GDPR Art. 25):</b> The VM was deployed in the Subnet-FrontEnd with Zero Public Exposure (no Public IP). This ensures the instance is invisible to the public internet, mitigating 100% of external brute-force attempts.</p>
-- <p align="justify"><b>Automated Auditing (NIS2 & ISO 27001 A.12.4.1):</b> Injected the Log Analytics Agent via Azure VM Extensions. This automation ensures that every new compute resource is under surveillance from its first second of life.</p>
+- <p align="justify"><b>Automated Auditing (NIS2 & ISO 27001:2022 A.8.16 – Monitoring Activities):</b> Injected the Log Analytics Agent via Azure VM Extensions. This automation ensures that every new compute resource is under surveillance from its first second of life.</p>
 - <p align="justify"><b>Connectivity Validation (Heartbeat):</b> Verified the real-time Heartbeat signal in the SIEM. This proves the end-to-end telemetry pipeline is operational, from the private network to the centralized log vault in Amsterdam.</p>
 
 <p align="justify">📸 <i><b>VM Heartbeat Evidence:</b> Active heartbeat validation signals inside the SIEM vault, demonstrating immediate continuous monitoring coverage for internal assets.</i></p>
