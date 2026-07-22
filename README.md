@@ -13,9 +13,9 @@
 
 ## 👁️ Strategic Vision: Compliance-as-Code
 
-As a Certified ISO 27001 Auditor operating at the intersection of Cloud Security Engineering and Regulatory Governance, Building bridges to close the gap between the traditional separation of compliance checklists and technical implementation. Manual checklists have long since ceased to be sufficient for verifying security by design or for enforcing complex regulatory frameworks such as GDPR and NISF2 in agile architectures.
+As a Certified ISO 27001 Auditor working at the intersection of Cloud Security Engineering and Regulatory Governance, I focus on closing the gap between compliance requirements and technical implementation. Manual checklists are no longer sufficient to verify security by design or to enforce complex regulatory frameworks like GDPR and NIS2 within agile architectures.
 
-This professional portfolio serves as live evidence of **Automated Governance**. It documents my technical blueprint from foundational automation using shell scripting to building high-availability architectures and preventative guardrails using Infrastructure as Code (IaC).
+This portfolio documents that approach in practice — from foundational automation using shell scripting to high-availability architectures and preventative guardrails built with Infrastructure as Code (IaC).
 
 ---
 
