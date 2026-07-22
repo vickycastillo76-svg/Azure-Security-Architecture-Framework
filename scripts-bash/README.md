@@ -207,7 +207,7 @@ AzureActivity
 
 <p align="justify">This final module focuses on centralizing telemetry, validating incident response, and hardening the network perimeter, aligned with international security frameworks.</p>
 
-### 📊 SOC Operational Dashboard & KQL Analysis (ISO 27001 A.12.4.1)
+### 📊 SOC Operational Dashboard & KQL Analysis (ISO 27001:2022 A.8.16 – Monitoring Activities)
 <p align="justify">To provide executive-level visibility and satisfy <b>Continuous Monitoring</b> requirements, I developed a real-time dashboard using <b>KQL (Kusto Query Language)</b>. This visualization summarizes all platform operations, enabling the SOC team to monitor infrastructure health at a glance.</p>
 
 **KQL Visualization Query:**
@@ -223,11 +223,11 @@ AzureActivity
 <p align="justify">I conducted a Live Security Validation to test the SIEM's alerting capabilities and incident handling flow:</p>
 - <p align="justify"><b>Simulation:</b> Manual deletion of a Public IP resource via CLI.</p>
 - <p align="justify"><b>Detection:</b> The Azure Activity Log successfully captured the DELETE event.</p>
-- <p align="justify"><b>Traceability:</b> Verified accountability through forensic KQL queries, ensuring a complete audit trail and Non-repudiation (ISO 27001 A.12.4.3).</p>
+- <p align="justify"><b>Traceability:</b> Verified accountability through forensic KQL queries, ensuring a complete and protected audit trail (ISO 27001:2022 A.8.15 – Logging).</p>
 
 <p align="justify">🔒 <b>Security & Privacy Note (Data Redaction):</b> In the forensic evidence below, the 'Caller' column has been excluded to comply with GDPR Data Minimization and privacy best practices for public repositories.</p>
 
-### 🏰 Advanced Network Hardening (Zero Trust - ISO 27001 A.13.1.1)
+### 🏰 Advanced Network Hardening (Zero Trust - ISO 27001:2022 A.8.20 / A.8.22 – Network Security & Segregation of Networks)
 <p align="justify">To eliminate the attack surface and implement Network Segregation, I implemented an Azure Bastion Host:</p>
 - <p align="justify"><b>Secure Access:</b> Management is now performed via SSL (Port 443), removing the need for Public IPs on internal assets and mitigating brute-force risks.</p>
 - <p align="justify"><b>Inventory Audit:</b> Conducted a full Shadow IT cleanup, decommissioning redundant VNets in non-EU regions to ensure compliance with Sovereignty and FinOps best practices.</p>
